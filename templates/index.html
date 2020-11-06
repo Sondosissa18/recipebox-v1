@@ -1,0 +1,14 @@
+<h1>The Recipe is A Story That Ends With A Good Meal</h1>
+
+<ul>
+  {% for recipe in recipes %}
+  <li>
+    <strong><a href="/recipes/{{recipe.id}}">{{recipe.title}}</a></strong> -
+    Written by
+    <a href="/author/{{recipe.author.id}}/">{{recipe.author.name}}</a>
+    <!-- <ul>
+      <li>{{recipe.description}}</li>
+    </ul> -->
+  </li>
+  {% endfor %}
+</ul>
