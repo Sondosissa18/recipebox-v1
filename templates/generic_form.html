@@ -1,9 +1,17 @@
+{% extends 'index.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
 <h1>Add A new ....</h1>
 <br /><br />
 <div class="form-group">
 
-<form method="post" action="">
-  {% csrf_token %} {{ form.as_p }}
-  <input type="submit" value="Submit" />
+<form method="post" action="" novalidate>
+  {% csrf_token %} {{ form|crispy }}
+  <input type="submit" class="btn btn-success" value="Submit" />
 </div>
 </form>
+
+{% endblock %}
+
