@@ -24,9 +24,15 @@
             <ul>
               {% for recipe in recipes %}
               <li>
+<<<<<<< HEAD
                 <strong><a href="/recipes/{{recipe.id}}">{{recipe.title}}</a></strong> 
                 <!-- - Written by
                 <a href="/author/{{recipe.author.id}}/">{{recipe.author.name}}</a> -->
+=======
+                <strong><a href="/recipes/{{recipe.id}}">{{recipe.title}}</a></strong> -
+                Written by
+                <a href="/author/{{recipe.author.id}}/">{{recipe.author.name}}</a>
+>>>>>>> b0ae785d1277faaa9ad9cc48909d5c149b87bcac
               </li>
               {% endfor %}
               <br />
