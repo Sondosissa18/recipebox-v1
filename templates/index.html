@@ -1,27 +1,53 @@
-<h1>The Recipe is A Story That Ends With A Good Meal</h1>
+<!doctype html>
+<html lang="en">
 
-<ul>
-  {% for recipe in recipes %}
-  <li>
-    <strong><a href="/recipes/{{recipe.id}}">{{recipe.title}}</a></strong> -
-    Written by
-    <a href="/author/{{recipe.author.id}}/">{{recipe.author.name}}</a>
-    <!-- <ul>
-      <li>{{recipe.description}}</li>
-    </ul> -->
-  </li>
-  {% endfor %}
-  <!-- <p>Add a new recipe <a href="addauthor/"></a></p> -->
-  <br />
-  <ul></ul>
-  <li>
-    <p>Add a new Author: <a href="{% url 'add_author' %}">Add Author</a></p>
-    
-  </li>
-  <li>
-    <p>Add a new Recipe: <a href="{% url 'add_recipe' %}">Add Recipe</a></p>
-  </li>
-  </ul>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>The Recipe is A Story That Ends With A Good Meal</title>
+</head>
 
-</li>
-</ul>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <div class="col-8">
+                  <h1 class="mt-2">The Recipe is A Story That Ends With A Good Meal</h1>
+
+            <div>
+        <hr class="mt-0 mb-4">
+
+            <!-- <h1>The Recipe is A Story That Ends With A Good Meal</h1> -->
+            
+            <ul>
+              {% for recipe in recipes %}
+              <li>
+                <strong><a href="/recipes/{{recipe.id}}">{{recipe.title}}</a></strong> -
+                Written by
+                <a href="/author/{{recipe.author.id}}/">{{recipe.author.name}}</a>
+              </li>
+              {% endfor %}
+              <br />
+              <ul></ul>
+              <li>
+                <p>Add a new Author: <a href="{% url 'add_author' %}">Add Author</a></p>
+            
+              </li>
+              <li>
+                <p>Add a new Recipe: <a href="{% url 'add_recipe' %}">Add Recipe</a></p>
+              </li>
+            </ul>
+            
+            </li>
+            </ul>
+        {% block content %}
+        {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
