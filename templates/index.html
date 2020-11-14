@@ -20,13 +20,16 @@
         <hr class="mt-0 mb-4">
 
             <!-- <h1>The Recipe is A Story That Ends With A Good Meal</h1> -->
+            {% if request.user.is_authenticated %}
+              <h1>Hello, {{request.user.username}}</h1>
+
+            {% endif %}
             
             <ul>
               {% for recipe in recipes %}
               <li>
                 <strong><a href="/recipes/{{recipe.id}}">{{recipe.title}}</a></strong> 
-                <!-- - Written by
-                <a href="/author/{{recipe.author.id}}/">{{recipe.author.name}}</a> -->
+               
               </li>
               {% endfor %}
               <br />
@@ -42,9 +45,19 @@
             
             </li>
             </ul>
+
+       
+        
+        
         {% block content %}
+
+        {% if user.is_authenticated %}
+        <button><a href="{%  url 'logout' %}">Logout</a></button>
+        {% endif %}
+        
         {% endblock %}
         </div>
+
       </div>
     </div>
   </div>
